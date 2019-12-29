@@ -1,0 +1,39 @@
+package Package1;
+//import java.awt.AWTException;	
+//import java.awt.Robot;
+//import java.awt.datatransfer.StringSelection;
+//import java.awt.event.KeyEvent;	
+import org.openqa.selenium.By;	
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+//import org.openqa.selenium.remote.RemoteWebDriver;
+
+
+public class Class3 {
+    public static void main(String[] args) throws InterruptedException {	
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\nithya\\Documents\\chromedriver_win32 (2)\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+        driver.get("https://demoqa.com/keyboard-events/"); // sample url	
+        WebElement uploadElement = driver.findElement(By.id("browseFile"));
+        Thread.sleep(2000);
+        uploadElement.sendKeys("C:\\Users\\nithya\\Desktop\\Upload.txt");
+
+        driver.findElement(By.id("uploadButton")).click();
+
+        Thread.sleep(2000);
+        driver.switchTo().alert().accept();
+
+        System.out.println("File Uploaded Successfully");
+        /*StringSelection sel = new StringSelection("C:\\Users\\nithya\\Desktop\\Upload.txt");
+
+        Robot robot = new Robot();  // Robot class throws AWT Exception	
+        Thread.sleep(2000); // Thread.sleep throws InterruptedException	
+        robot.keyPress(KeyEvent.VK_ENTER); */ // press arrow down key of keyboard to navigate and select Save rad
+
+}}
+//*[@id="browseFile"]
+//#browseFile
+
+///html/body/div[1]/div[2]/div/div[2]/div[2]/table/tbody/tr[3]/td[2]/button
+
